@@ -1,8 +1,6 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-export type RenderInput = (props: FieldProps) => React.ReactNode;
-
 export interface TextFieldProps {
   className?: string;
   disabled?: boolean;
@@ -12,6 +10,8 @@ export interface TextFieldProps {
   style?: object;
   type: string;
 }
+
+export type RenderInput = (fieldProps: FieldProps) => React.ReactNode;
 
 const TextField: React.FC<TextFieldProps> = ({
   className,
