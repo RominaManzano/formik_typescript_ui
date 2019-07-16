@@ -1,9 +1,12 @@
 {
   "name": "formik_typescript_ui",
   "version": "1.0.0",
+  "author": {
+    "name": "Romina Manzano"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/RominaManzano/formik_typescript_ui.git"
   },
   "main": "dist/index.ts",
   "dependencies": {
