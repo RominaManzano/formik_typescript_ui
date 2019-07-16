@@ -1,0 +1,33 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {
+    "no-empty": true
+  },
+  "rules": {
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "ordered-imports": false,
+    "import-name": false,
+    "variable-name": false,
+    "no-any": true,
+    "interface-name": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "member-variable-declaration",
+      "variable-declaration",
+      "object-destructuring",
+      "array-destructuring"
+    ]
+  },
+  "rulesDirectory": []
+}
