@@ -1,21 +1,37 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-export interface TextFieldProps {
-  type: string;
-  name: string;
-  placeholder: string;
-}
-
 export type RenderInput = (props: FieldProps) => React.ReactNode;
 
+export interface TextFieldProps {
+  className?: string;
+  disabled?: boolean;
+  id?: string | null;
+  name: string;
+  placeholder?: string;
+  style?: object;
+  type: string;
+}
+
 const TextField: React.FC<TextFieldProps> = ({
-  type,
+  className,
+  disabled,
+  id,
   name,
   placeholder,
+  style,
+  type,
 }: TextFieldProps) => {
   const renderInput: RenderInput = ({ field }: FieldProps) => (
-    <input {...field} type={type} placeholder={placeholder} />
+    <input
+      {...field}
+      id={id || name}
+      type={type}
+      className={className}
+      style={style}
+      placeholder={placeholder}
+      disabled={disabled}
+    />
   );
 
   return (
@@ -25,6 +41,14 @@ const TextField: React.FC<TextFieldProps> = ({
       render={renderInput}
     />
   );
+};
+
+TextField.defaultProps = {
+  className: '',
+  disabled: false,
+  id: null,
+  placeholder: '',
+  style: {},
 };
 
 export default TextField;

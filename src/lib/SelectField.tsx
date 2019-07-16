@@ -3,10 +3,7 @@ import React from 'react';
 import Select from 'react-select';
 import { Field, FieldProps } from 'formik';
 
-export interface Option {
-  label: string;
-  value: string;
-}
+import Option from './OptionType';
 
 export interface SelectProps {
   options: Option[];
