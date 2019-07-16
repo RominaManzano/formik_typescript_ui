@@ -2,7 +2,6 @@
 
 <div align="center">
   [![NPM](https://www.npmjs.com/package/formik_typescript_ui)](https://www.npmjs.com/package/formik_typescript_ui)
-  [![TypeScript Style Guide](https://img.shields.io/badge/code_style-Airbnb-brightgreen.svg)](https://github.com/iamturns/eslint-config-airbnb-typescript)
 </div>
 
 ## Overview
