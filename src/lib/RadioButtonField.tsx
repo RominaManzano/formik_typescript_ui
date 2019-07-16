@@ -1,15 +1,19 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-interface Props {
+export interface RadioButtonProps {
   id: string;
   label: string;
   name: string;
 }
 
-type RenderRadioButton = (props: FieldProps) => React.ReactNode;
+export type RenderRadioButton = (props: FieldProps) => React.ReactNode;
 
-const RadioButtonField: React.FC<Props> = ({ name, label, id }: Props) => {
+const RadioButtonField: React.FC<RadioButtonProps> = ({
+  name,
+  label,
+  id,
+}: RadioButtonProps) => {
   const renderRadioButton: RenderRadioButton = ({ field: {
     onChange,
     value,

@@ -1,15 +1,19 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-interface Props {
+export interface CheckboxProps {
   id: string;
   label: string;
   name: string;
 }
 
-type RenderCheckbox = (props: FieldProps) => React.ReactNode;
+export type RenderCheckbox = (props: FieldProps) => React.ReactNode;
 
-const CheckboxField: React.FC<Props> = ({ id, label, name }: Props) => {
+const CheckboxField: React.FC<CheckboxProps> = ({
+  id,
+  label,
+  name,
+}: CheckboxProps) => {
   const renderCheckbox: RenderCheckbox = ({ field: {
     onChange,
     value,

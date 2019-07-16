@@ -8,7 +8,8 @@
     "type": "git",
     "url": "https://github.com/RominaManzano/formik_typescript_ui.git"
   },
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.6.3",
@@ -29,6 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "prepublish": "tsc",
   "eslintConfig": {
     "extends": "react-app"
   },

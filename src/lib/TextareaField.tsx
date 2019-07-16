@@ -1,16 +1,20 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-interface Props {
+export interface TexareaProps {
   name: string;
   placeholder: string;
 }
 
-const TextareaField: React.FC<Props> = ({ name, placeholder }: Props) => {
-  const renderTexarea: (props: FieldProps) => React.ReactNode =
-    ({ field }: FieldProps) => (
-      <textarea {...field} placeholder={placeholder} />
-    );
+export type RenderTextarea = (props: FieldProps) => React.ReactNode;
+
+const TextareaField: React.FC<TexareaProps> = ({
+  name,
+  placeholder,
+}: TexareaProps) => {
+  const renderTexarea: RenderTextarea = ({ field }: FieldProps) => (
+    <textarea {...field} placeholder={placeholder} />
+  );
 
   return (
     <Field

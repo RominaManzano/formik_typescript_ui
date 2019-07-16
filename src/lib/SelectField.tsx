@@ -8,7 +8,7 @@ export interface Option {
   value: string;
 }
 
-interface Props {
+export interface SelectProps {
   options: Option[];
   name: string;
   placeholder?: string;
@@ -16,19 +16,17 @@ interface Props {
   isSearchable?: boolean;
 }
 
-type RenderSelect = (props: FieldProps) => React.ReactNode;
-type GetValue = () => any;
-type HandleChange = (option: any) => void;
+export type RenderSelect = (props: FieldProps) => React.ReactNode;
+export type GetValue = () => any;
+export type HandleChange = (option: any) => void;
 
-const SelectField: React.FC<Props> = (props: Props) => {
-  const {
-    isMulti,
-    isSearchable,
-    name,
-    options,
-    placeholder,
-  }: Props = props;
-
+const SelectField: React.FC<SelectProps> = ({
+  isMulti,
+  isSearchable,
+  name,
+  options,
+  placeholder,
+}: SelectProps) => {
   const renderSelect: RenderSelect = (fieldProps: FieldProps) => {
     const { form }: FieldProps = fieldProps;
 

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
-interface Props {
+export interface DatePickerProps {
   id: string;
   name: string;
 }
 
-type RenderDatepicker = (props: FieldProps) => React.ReactNode;
+export type RenderDatepicker = (props: FieldProps) => React.ReactNode;
 
-const DatePickerField: React.FC<Props> = ({ id, name }: Props) => {
+const DatePickerField: React.FC<DatePickerProps> = ({
+  id,
+  name,
+}: DatePickerProps) => {
   const renderDatepicker: RenderDatepicker = ({ field }: FieldProps) => {
     return (
       <input
