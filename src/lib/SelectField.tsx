@@ -6,11 +6,17 @@ import { Field, FieldProps } from 'formik';
 import Option from './OptionType';
 
 export interface SelectProps {
-  options: Option[];
-  name: string;
-  placeholder?: string;
+  autoFocus?: boolean;
+  className?: string;
+  id?: string | null;
+  isDisabled?: boolean;
+  isLoading?: boolean;
   isMulti?: boolean;
   isSearchable?: boolean;
+  name: string;
+  options: Option[];
+  placeholder?: string;
+  style?: object;
 }
 
 export type RenderSelect = (props: FieldProps) => React.ReactNode;
@@ -18,11 +24,17 @@ export type GetValue = () => any;
 export type HandleChange = (option: any) => void;
 
 const SelectField: React.FC<SelectProps> = ({
+  autoFocus,
+  className,
+  id,
+  isDisabled,
+  isLoading,
   isMulti,
   isSearchable,
   name,
   options,
   placeholder,
+  style,
 }: SelectProps) => {
   const renderSelect: RenderSelect = (fieldProps: FieldProps) => {
     const { form }: FieldProps = fieldProps;
@@ -50,13 +62,19 @@ const SelectField: React.FC<SelectProps> = ({
 
     return (
       <Select
-        name={name}
-        values={getValue()}
-        options={options}
-        placeholder={placeholder}
-        onChange={handleChange}
+        autoFocus={autoFocus}
+        className={className}
+        id={id || name}
+        isDisabled={isDisabled}
+        isLoading={isLoading}
         isMulti={isMulti}
         isSearchable={isSearchable}
+        name={name}
+        onChange={handleChange}
+        options={options}
+        placeholder={placeholder}
+        styles={style}
+        values={getValue()}
       />
     );
   };
@@ -67,6 +85,18 @@ const SelectField: React.FC<SelectProps> = ({
       render={renderSelect}
     />
   );
+};
+
+SelectField.defaultProps = {
+  autoFocus: false,
+  className: '',
+  id: null,
+  isDisabled: false,
+  isLoading: false,
+  isMulti: false,
+  isSearchable: false,
+  placeholder: '',
+  style: {},
 };
 
 export default SelectField;
