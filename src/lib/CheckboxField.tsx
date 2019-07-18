@@ -3,9 +3,11 @@ import { Field, FieldProps } from 'formik';
 
 export interface CheckboxProps {
   className?: string;
+  classNameLabel?: string;
   disabled?: boolean;
   id?: string | null;
   label: string;
+  labelStyle?: object;
   name: string;
   style?: object;
 }
@@ -14,9 +16,11 @@ export type RenderCheckbox = (props: FieldProps) => React.ReactNode;
 
 const CheckboxField: React.FC<CheckboxProps> = ({
   className,
+  classNameLabel,
   disabled,
   id,
   label,
+  labelStyle,
   name,
   style,
 }: CheckboxProps) => {
@@ -37,7 +41,11 @@ const CheckboxField: React.FC<CheckboxProps> = ({
           type="checkbox"
           value={value}
         />
-        <label htmlFor={id || name}>
+        <label
+          htmlFor={id || name}
+          className={classNameLabel}
+          style={labelStyle}
+        >
           {label}
         </label>
       </React.Fragment>
@@ -54,8 +62,10 @@ const CheckboxField: React.FC<CheckboxProps> = ({
 
 CheckboxField.defaultProps = {
   className: '',
+  classNameLabel: '',
   disabled: false,
   id: null,
+  labelStyle: {},
   style: {},
 };
 
