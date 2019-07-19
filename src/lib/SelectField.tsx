@@ -7,7 +7,7 @@ import Option from './OptionType';
 
 export interface SelectProps {
   autoFocus?: boolean;
-  className?: string;
+  className?: string | null;
   id?: string | null;
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -15,7 +15,7 @@ export interface SelectProps {
   isSearchable?: boolean;
   name: string;
   options: Option[];
-  placeholder?: string;
+  placeholder?: string | null;
   style?: object;
 }
 
@@ -63,7 +63,7 @@ const SelectField: React.FC<SelectProps> = ({
     return (
       <Select
         autoFocus={autoFocus}
-        className={className}
+        className={className || ''}
         id={id || name}
         isDisabled={isDisabled}
         isLoading={isLoading}
@@ -72,7 +72,7 @@ const SelectField: React.FC<SelectProps> = ({
         name={name}
         onChange={handleChange}
         options={options}
-        placeholder={placeholder}
+        placeholder={placeholder || ''}
         styles={style}
         values={getValue()}
       />
@@ -89,13 +89,13 @@ const SelectField: React.FC<SelectProps> = ({
 
 SelectField.defaultProps = {
   autoFocus: false,
-  className: '',
+  className: null,
   id: null,
   isDisabled: false,
   isLoading: false,
   isMulti: false,
   isSearchable: false,
-  placeholder: '',
+  placeholder: null,
   style: {},
 };
 

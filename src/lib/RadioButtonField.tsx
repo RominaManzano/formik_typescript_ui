@@ -2,14 +2,14 @@ import React from 'react';
 import { Field, FieldProps } from 'formik';
 
 export interface RadioButtonProps {
-  className?: string;
-  classNameLabel?: string;
+  className?: string | null;
+  classNameLabel?: string | null;
   disabled?: boolean;
   id: string;
-  inputStyle?: object;
   label?: string | null;
   labelStyle?: object;
   name: string;
+  style?: object;
 }
 
 export type RenderRadioButton = (props: FieldProps) => React.ReactNode;
@@ -19,10 +19,10 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
   classNameLabel,
   disabled,
   id,
-  inputStyle,
   label,
   labelStyle,
   name,
+  style,
 }: RadioButtonProps) => {
   const renderRadioButton: RenderRadioButton = ({ field: {
     onChange,
@@ -31,7 +31,7 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
     const displayLabel: React.ReactNode = label ?
       (
         <label
-          className={classNameLabel}
+          className={classNameLabel || ''}
           htmlFor={id}
           style={labelStyle}
         >
@@ -42,13 +42,13 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
     return (
       <React.Fragment>
         <input
-          className={className}
+          className={className || ''}
           checked={id === value}
           disabled={disabled}
           id={id}
           name={name}
           onChange={onChange}
-          style={inputStyle}
+          style={style}
           type="radio"
           value={id}
         />
@@ -66,12 +66,12 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
 };
 
 RadioButtonField.defaultProps = {
-  className: '',
-  classNameLabel: '',
+  className: null,
+  classNameLabel: null,
   disabled: false,
-  inputStyle: {},
   label: null,
   labelStyle: {},
+  style: {},
 };
 
 export default RadioButtonField;
