@@ -2,11 +2,11 @@ import React from 'react';
 import { Field, FieldProps } from 'formik';
 
 export interface TexareaProps {
-  className?: string;
+  className?: string | null;
   disabled?: boolean;
   id?: string | null;
   name: string;
-  placeholder?: string;
+  placeholder?: string | null;
   style?: object;
 }
 
@@ -24,9 +24,9 @@ const TextareaField: React.FC<TexareaProps> = ({
     <textarea
       {...field}
       id={id || name}
-      className={className}
+      className={className || ''}
       disabled={disabled}
-      placeholder={placeholder}
+      placeholder={placeholder || ''}
       style={style}
     />
   );
@@ -40,10 +40,10 @@ const TextareaField: React.FC<TexareaProps> = ({
 };
 
 TextareaField.defaultProps = {
-  className: '',
+  className: null,
   disabled: false,
   id: null,
-  placeholder: '',
+  placeholder: null,
   style: {},
 };
 

@@ -2,11 +2,11 @@ import React from 'react';
 import { Field, FieldProps } from 'formik';
 
 export interface DatePickerProps {
-  className?: string;
+  className?: string | null;
   disabled?: boolean;
   id?: string | null;
-  maxDate?: string;
-  minDate?: string;
+  maxDate?: string | null;
+  minDate?: string | null;
   name: string;
   style?: object;
 }
@@ -26,11 +26,11 @@ const DatePickerField: React.FC<DatePickerProps> = ({
     return (
       <input
         {...field}
-        className={className}
+        className={className || ''}
         disabled={disabled}
         id={id || name}
-        max={maxDate}
-        min={minDate}
+        max={maxDate || ''}
+        min={minDate || ''}
         style={style}
         type="date"
       />
@@ -46,11 +46,11 @@ const DatePickerField: React.FC<DatePickerProps> = ({
 };
 
 DatePickerField.defaultProps = {
-  className: '',
+  className: null,
   disabled: false,
   id: null,
-  maxDate: '',
-  minDate: '',
+  maxDate: null,
+  minDate: null,
   style: {},
 };
 

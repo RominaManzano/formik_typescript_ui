@@ -3,8 +3,8 @@ import RadioButtonField from './RadioButtonField';
 import RadioOptionType from './RadioOptionType';
 
 export interface RadioGroupProps {
-  className?: string;
-  classNameLabel?: string;
+  className?: string | null;
+  classNameLabel?: string | null;
   labelStyle?: object;
   name: string;
   options: RadioOptionType[];
@@ -44,8 +44,8 @@ const RadioButtonGroup: React.FC<RadioGroupProps> = ({
 };
 
 RadioButtonGroup.defaultProps = {
-  className: '',
-  classNameLabel: '',
+  className: null,
+  classNameLabel: null,
   labelStyle: {},
   style: {},
 };

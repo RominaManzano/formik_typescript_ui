@@ -2,11 +2,11 @@ import React from 'react';
 import { Field, FieldProps } from 'formik';
 
 export interface TextFieldProps {
-  className?: string;
+  className?: string | null;
   disabled?: boolean;
   id?: string | null;
   name: string;
-  placeholder?: string;
+  placeholder?: string | null;
   style?: object;
   type?: string;
 }
@@ -27,9 +27,9 @@ const TextField: React.FC<TextFieldProps> = ({
       {...field}
       id={id || name}
       type={type}
-      className={className}
+      className={className || ''}
       style={style}
-      placeholder={placeholder}
+      placeholder={placeholder || ''}
       disabled={disabled}
     />
   );
@@ -44,10 +44,10 @@ const TextField: React.FC<TextFieldProps> = ({
 };
 
 TextField.defaultProps = {
-  className: '',
+  className: null,
   disabled: false,
   id: null,
-  placeholder: '',
+  placeholder: null,
   style: {},
   type: 'text',
 };

@@ -3,8 +3,8 @@ import CheckboxField from './CheckboxField';
 import CheckOptionType from './CheckOptionType';
 
 export interface CheckboxGroupProps {
-  className?: string;
-  classNameLabel?: string;
+  className?: string | null;
+  classNameLabel?: string | null;
   labelStyle?: object;
   options: CheckOptionType[];
   style?: object;
@@ -43,8 +43,8 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
 };
 
 CheckboxGroup.defaultProps = {
-  className: '',
-  classNameLabel: '',
+  className: null,
+  classNameLabel: null,
   labelStyle: {},
   style: {},
 };

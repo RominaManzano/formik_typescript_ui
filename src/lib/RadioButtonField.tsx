@@ -2,8 +2,8 @@ import React from 'react';
 import { Field, FieldProps } from 'formik';
 
 export interface RadioButtonProps {
-  className?: string;
-  classNameLabel?: string;
+  className?: string | null;
+  classNameLabel?: string | null;
   disabled?: boolean;
   id: string;
   label?: string | null;
@@ -31,7 +31,7 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
     const displayLabel: React.ReactNode = label ?
       (
         <label
-          className={classNameLabel}
+          className={classNameLabel || ''}
           htmlFor={id}
           style={labelStyle}
         >
@@ -42,7 +42,7 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
     return (
       <React.Fragment>
         <input
-          className={className}
+          className={className || ''}
           checked={id === value}
           disabled={disabled}
           id={id}
@@ -66,8 +66,8 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
 };
 
 RadioButtonField.defaultProps = {
-  className: '',
-  classNameLabel: '',
+  className: null,
+  classNameLabel: null,
   disabled: false,
   label: null,
   labelStyle: {},
