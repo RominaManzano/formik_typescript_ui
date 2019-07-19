@@ -6,10 +6,10 @@ export interface RadioButtonProps {
   classNameLabel?: string;
   disabled?: boolean;
   id: string;
-  inputStyle?: object;
   label?: string | null;
   labelStyle?: object;
   name: string;
+  style?: object;
 }
 
 export type RenderRadioButton = (props: FieldProps) => React.ReactNode;
@@ -19,10 +19,10 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
   classNameLabel,
   disabled,
   id,
-  inputStyle,
   label,
   labelStyle,
   name,
+  style,
 }: RadioButtonProps) => {
   const renderRadioButton: RenderRadioButton = ({ field: {
     onChange,
@@ -48,7 +48,7 @@ const RadioButtonField: React.FC<RadioButtonProps> = ({
           id={id}
           name={name}
           onChange={onChange}
-          style={inputStyle}
+          style={style}
           type="radio"
           value={id}
         />
@@ -69,9 +69,9 @@ RadioButtonField.defaultProps = {
   className: '',
   classNameLabel: '',
   disabled: false,
-  inputStyle: {},
   label: null,
   labelStyle: {},
+  style: {},
 };
 
 export default RadioButtonField;

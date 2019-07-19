@@ -5,19 +5,19 @@ import RadioOptionType from './RadioOptionType';
 export interface RadioGroupProps {
   className?: string;
   classNameLabel?: string;
-  inputStyle?: object;
   labelStyle?: object;
   name: string;
   options: RadioOptionType[];
+  style?: object;
 }
 
 const RadioButtonGroup: React.FC<RadioGroupProps> = ({
   className,
   classNameLabel,
-  inputStyle,
   labelStyle,
   name,
   options,
+  style,
 }: RadioGroupProps) => {
   const displayRadioButtons: React.ReactNode = options.map(({
     id,
@@ -28,10 +28,10 @@ const RadioButtonGroup: React.FC<RadioGroupProps> = ({
           className={className}
           classNameLabel={classNameLabel}
           id={id}
-          inputStyle={inputStyle}
           labelStyle={labelStyle}
           name={name}
           label={label}
+          style={style}
         />
       </div>
     ));
@@ -46,8 +46,8 @@ const RadioButtonGroup: React.FC<RadioGroupProps> = ({
 RadioButtonGroup.defaultProps = {
   className: '',
   classNameLabel: '',
-  inputStyle: {},
   labelStyle: {},
+  style: {},
 };
 
 export default RadioButtonGroup;

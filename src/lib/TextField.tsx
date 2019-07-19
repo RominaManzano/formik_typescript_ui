@@ -8,7 +8,7 @@ export interface TextFieldProps {
   name: string;
   placeholder?: string;
   style?: object;
-  type: string;
+  type?: string;
 }
 
 export type RenderInput = (fieldProps: FieldProps) => React.ReactNode;
@@ -49,6 +49,7 @@ TextField.defaultProps = {
   id: null,
   placeholder: '',
   style: {},
+  type: 'text',
 };
 
 export default TextField;

@@ -6,7 +6,7 @@ export interface TexareaProps {
   disabled?: boolean;
   id?: string | null;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   style?: object;
 }
 
@@ -43,6 +43,7 @@ TextareaField.defaultProps = {
   className: '',
   disabled: false,
   id: null,
+  placeholder: '',
   style: {},
 };
 
