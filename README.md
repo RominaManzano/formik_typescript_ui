@@ -1,4 +1,6 @@
-<h1 align="center">Formik TypeScript UI</h1>
+# Formik TypeScript UI
+
+[![NPM](https://img.shields.io/npm/v/formik_typescript_ui.svg)](https://www.npmjs.com/package/formik_typescript_ui)
 
 ## Overview
 
