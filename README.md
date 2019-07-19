@@ -1,6 +1,7 @@
 # Formik TypeScript UI
 
 [![NPM](https://img.shields.io/npm/v/formik_typescript_ui.svg)](https://www.npmjs.com/package/formik_typescript_ui)
+[![license](https://img.shields.io/npm/l/formik_typescript_ui.svg)](https://github.com/RominaManzano/formik_typescript_ui/blob/master/LICENSE)
 
 ## Overview
 
