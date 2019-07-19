@@ -169,3 +169,7 @@ name        | string  | **required**  | Sets the `name` for the `<input>` elemen
 placeholder | string  | null          | Sets the placeholder for the `<input>` element
 style       | object  | {}            | Adds custom inline style to the `<input>` element
 type        | string  | 'text'        | HTML types: `text`, `email`, `password` and `number`
+
+### License
+
+MIT © [Romina Manzano](https://github.com/RominaManzano)
