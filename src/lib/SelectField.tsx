@@ -74,7 +74,7 @@ const SelectField: React.FC<SelectProps> = ({
         options={options}
         placeholder={placeholder || ''}
         styles={style}
-        values={getValue()}
+        value={getValue()}
       />
     );
   };
