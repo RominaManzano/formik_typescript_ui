@@ -62,4 +62,22 @@ const TagsInputField: React.FC<TagsInputProps> = ({
   );
 };
 
+TagsInputField.defaultProps = {
+  addOnBlur: false,
+  addOnPaste: false,
+  className: 'react-tagsinput',
+  disabled: false,
+  focusedClassName: 'react-tagsinput--focused',
+  inputProps: {
+    className: 'react-tagsinput-input',
+    placeholder: 'Add a tag',
+  },
+  maxTags: -1,
+  pasteSplit: (text: string) => text.split(' ').map(word => word.trim()),
+  tagProps: {
+    className: 'react-tagsinput-tag',
+    classNameRemove: 'react-tagsinput-remove',
+  },
+};
+
 export default TagsInputField;
