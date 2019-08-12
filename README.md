@@ -142,6 +142,79 @@ options      | OptionType[] | **required**  | Sets the options for the `<Select 
 placeholder  | string       | null          | Sets the placeholder for the `<input>` element
 style        | object       | {}            | Style modifier methods as described on [react-select](https://react-select.com/props) docs
 
+### TagsInputField
+
+The TagsInputField component uses `react-tagsinput` to render the `input` element and it's respective tags. For more information on the `react-tagsinput` library, click [here](https://github.com/olahol/react-tagsinput).
+
+**InputProps**
+
+The `InputProps`, can be exported from the `react-tagsinput` library or defined as follows:
+
+```typescript
+interface InputProps {
+  className: string;
+  placeholder: string;
+}
+```
+
+Default values for `inputProps`:
+
+```typescript
+const defaultInputProps: InputProps = {
+  className: 'react-tagsinput-input',
+  placeholder: 'Add a tag',
+}
+```
+
+**PasteSplit**
+
+The `PasteSplit` type, can be defined as follows:
+
+```typescript
+  type PasteSplit = (text: string) => string[];
+```
+
+```typescript
+  const defaultPasteSplit: PasteSplit = (text: string) => (
+    text.split(' ').map(word => word.trim());
+  );
+```
+
+**TagProps**
+
+The `TagProps`, can be exported from the `react-tagsinput` library or defined as follows:
+
+```typescript
+interface TagProps {
+  className: string;
+  classNameRemove: string;
+}
+```
+
+Default values for `tagProps`:
+
+```typescript
+const defaultTagProps: TagProps = {
+  className: 'react-tagsinput-tag',
+  classNameRemove: 'react-tagsinput-remove',
+}
+```
+
+**Props**
+
+Name             | Type       | Default Value              | Description
+---------------- | ---------- | -------------------------- | -----------
+addOnBlur        | boolean    | false                      | Adds a tag on the `input` blur event
+addOnPaste       | boolean    | false                      | Adds a tag on HTML5 paste
+className        | string     | `react-tagsinput`          | Adds a custom class to the component's wrapper
+disabled         | boolean    | false                      | Disables the `<input>` element
+focusedClassName | string     | `react-tagsinput--focused` | Adds a custom class to the component's wrapper when it's focused
+inputProps       | InputProps | `defaultInputProps`        | Props passed down to the `<input>` element
+maxTags          | number     | `-1`                       | Sets a maximum amount of tags. Use `-1` for infinite tags
+name             | string     | **required**               | Sets the `name` for the component
+pasteSplit       | PasteSplit | `defaultPasteSplit`        | Function that splits the pasted text
+tagProps         | TagProps   | `defaultTagProps`          | Props passed down to every `tag` component
+
 ### TextareaField
 
 The TextareaField component renders a simple HTML `<textarea>`.

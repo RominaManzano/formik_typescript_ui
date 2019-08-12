@@ -7,5 +7,6 @@ export { default as RadioButtonField } from './RadioButtonField';
 export { default as RadioButtonGroup } from './RadioButtonGroup';
 export { default as RadioOptionType } from './RadioOptionType';
 export { default as SelectField } from './SelectField';
+export { default as TagsInputField } from './TagsInputField';
 export { default as TextareaField } from './TextareaField';
 export { default as TextField } from './TextField';
