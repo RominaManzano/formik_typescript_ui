@@ -6,6 +6,7 @@ export interface TextFieldProps {
   disabled?: boolean;
   id?: string | null;
   name: string;
+  maxLength?: number;
   placeholder?: string | null;
   style?: object;
   type?: string;
@@ -18,6 +19,7 @@ const TextField: React.FC<TextFieldProps> = ({
   disabled,
   id,
   name,
+  maxLength,
   placeholder,
   style,
   type,
@@ -31,6 +33,7 @@ const TextField: React.FC<TextFieldProps> = ({
       style={style}
       placeholder={placeholder || ''}
       disabled={disabled}
+      maxLength={maxLength}
     />
   );
 
@@ -47,6 +50,7 @@ TextField.defaultProps = {
   className: null,
   disabled: false,
   id: null,
+  maxLength: undefined,
   placeholder: null,
   style: {},
   type: 'text',
