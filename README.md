@@ -242,19 +242,20 @@ type OnInput = (event: React.ChangeEvent<HTMLInputElement>) => void;
 type RefType = string | ((instance: HTMLInputElement | null) => void) | React.RefObject<HTMLInputElement> | null | undefined;
 ```
 
-Name        | Type     | Default Value | Description
------------ | -------- | ------------- | -----------
-className   | string   | null          | Adds a custom class to the `<input>` element
-disabled    | boolean  | false         | Disables the `<input>` element
-id          | string   | null          | Sets an id for the `<input>` element. If not specified, the name would be used instead
-name        | string   | **required**  | Sets the `name` for the `<input>` element
-maxLength   | number   | undefined     | Sets the `maxLenght` for the `<input>`
-onChange    | OnChange | undefined     | Sets the `onChange` function for the `<input>` element. When `undefined`, it takes the formik field default `onChange` function.
-onInput     | OnInput  | undefined     | Sets the `onInput` function for the `<input>` element
-placeholder | string   | null          | Sets the placeholder for the `<input>` element
-forwardRef  | RefType  | undefined     | Sets a ref for the `<input>` element.
-style       | object   | {}            | Adds custom inline style to the `<input>` element
-type        | string   | 'text'        | HTML types: `text`, `email`, `password` and `number`
+Name        | Type      | Default Value | Description
+----------- | --------- | ------------- | -----------
+className   | string    | null          | Adds a custom class to the `<input>` element
+disabled    | boolean   | false         | Disables the `<input>` element
+forwardRef  | RefType   | undefined     | Sets a ref for the `<input>` element.
+id          | string    | null          | Sets an id for the `<input>` element. If not specified, the name would be used instead
+name        | string    | **required**  | Sets the `name` for the `<input>` element
+maxLength   | number    | undefined     | Sets the `maxLenght` for the `<input>`
+onChange    | OnChange  | undefined     | Sets the `onChange` function for the `<input>` element. When `undefined`, it takes the formik field default `onChange` function.
+onInput     | OnInput   | undefined     | Sets the `onInput` function for the `<input>` element
+onKeyDown   | OnKeyDown | undefined     | Sets the `onKeyDown` function for the `<input>` element
+placeholder | string    | null          | Sets the placeholder for the `<input>` element
+style       | object    | {}            | Adds custom inline style to the `<input>` element
+type        | string    | 'text'        | HTML types: `text`, `email`, `password` and `number`
 
 ### License
 
