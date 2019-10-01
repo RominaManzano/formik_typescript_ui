@@ -9,13 +9,13 @@ type RefType = string
 export interface TextFieldProps {
   className?: string | null;
   disabled?: boolean;
+  forwardRef?: RefType;
   id?: string | null;
   name: string;
   maxLength?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
   placeholder?: string | null;
-  ref?: RefType;
   style?: object;
   type?: string;
 }
@@ -25,13 +25,13 @@ export type RenderInput = (fieldProps: FieldProps) => React.ReactNode;
 const TextField: React.FC<TextFieldProps> = ({
   className,
   disabled,
+  forwardRef,
   id,
   name,
   maxLength,
   onChange,
   onInput,
   placeholder,
-  ref,
   style,
   type,
 }: TextFieldProps) => {
@@ -45,7 +45,7 @@ const TextField: React.FC<TextFieldProps> = ({
       onChange={onChange || field.onChange}
       onInput={onInput}
       placeholder={placeholder || ''}
-      ref={ref}
+      ref={forwardRef}
       style={style}
       type={type}
     />
@@ -63,12 +63,12 @@ const TextField: React.FC<TextFieldProps> = ({
 TextField.defaultProps = {
   className: null,
   disabled: false,
+  forwardRef: undefined,
   id: null,
   maxLength: undefined,
   onChange: undefined,
   onInput: undefined,
   placeholder: null,
-  ref: undefined,
   style: {},
   type: 'text',
 };
