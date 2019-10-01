@@ -248,7 +248,7 @@ disabled    | boolean  | false         | Disables the `<input>` element
 id          | string   | null          | Sets an id for the `<input>` element. If not specified, the name would be used instead
 name        | string   | **required**  | Sets the `name` for the `<input>` element
 maxLength   | number   | undefined     | Sets the `maxLenght` for the `<input>`
-onChange    | OnChange | undefined     | Sets the `onChange` function for the `<input>` element
+onChange    | OnChange | undefined     | Sets the `onChange` function for the `<input>` element. When `undefined`, it takes the formik field default `onChange` function.
 onInput     | OnInput  | undefined     | Sets the `onInput` function for the `<input>` element
 placeholder | string   | null          | Sets the placeholder for the `<input>` element
 style       | object   | {}            | Adds custom inline style to the `<input>` element
