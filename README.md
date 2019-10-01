@@ -239,6 +239,7 @@ The TextField component renders a simple HTML `<input>`.
 ```typescript
 type OnChange = (event: React.ChangeEvent<HTMLInputElement>) => void;
 type OnInput = (event: React.ChangeEvent<HTMLInputElement>) => void;
+type RefType = string | ((instance: HTMLInputElement | null) => void) | React.RefObject<HTMLInputElement> | null | undefined;
 ```
 
 Name        | Type     | Default Value | Description
@@ -251,6 +252,7 @@ maxLength   | number   | undefined     | Sets the `maxLenght` for the `<input>`
 onChange    | OnChange | undefined     | Sets the `onChange` function for the `<input>` element. When `undefined`, it takes the formik field default `onChange` function.
 onInput     | OnInput  | undefined     | Sets the `onInput` function for the `<input>` element
 placeholder | string   | null          | Sets the placeholder for the `<input>` element
+ref         | RefType  | undefined     | Sets a ref for the `<input>` element.
 style       | object   | {}            | Adds custom inline style to the `<input>` element
 type        | string   | 'text'        | HTML types: `text`, `email`, `password` and `number`
 
