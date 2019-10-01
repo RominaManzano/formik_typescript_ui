@@ -1,6 +1,11 @@
 import React from 'react';
 import { Field, FieldProps } from 'formik';
 
+type RefType = string
+  | ((instance: HTMLInputElement | null) => void)
+  | React.RefObject<HTMLInputElement>
+  | null | undefined;
+
 export interface TextFieldProps {
   className?: string | null;
   disabled?: boolean;
@@ -10,6 +15,7 @@ export interface TextFieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
   placeholder?: string | null;
+  ref?: RefType;
   style?: object;
   type?: string;
 }
@@ -25,6 +31,7 @@ const TextField: React.FC<TextFieldProps> = ({
   onChange,
   onInput,
   placeholder,
+  ref,
   style,
   type,
 }: TextFieldProps) => {
@@ -38,6 +45,7 @@ const TextField: React.FC<TextFieldProps> = ({
       onChange={onChange || field.onChange}
       onInput={onInput}
       placeholder={placeholder || ''}
+      ref={ref}
       style={style}
       type={type}
     />
@@ -60,6 +68,7 @@ TextField.defaultProps = {
   onChange: undefined,
   onInput: undefined,
   placeholder: null,
+  ref: undefined,
   style: {},
   type: 'text',
 };
