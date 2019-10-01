@@ -7,6 +7,8 @@ export interface TextFieldProps {
   id?: string | null;
   name: string;
   maxLength?: number;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
   placeholder?: string | null;
   style?: object;
   type?: string;
@@ -20,6 +22,8 @@ const TextField: React.FC<TextFieldProps> = ({
   id,
   name,
   maxLength,
+  onChange,
+  onInput,
   placeholder,
   style,
   type,
@@ -27,13 +31,15 @@ const TextField: React.FC<TextFieldProps> = ({
   const renderInput: RenderInput = ({ field }: FieldProps) => (
     <input
       {...field}
-      id={id || name}
-      type={type}
       className={className || ''}
-      style={style}
-      placeholder={placeholder || ''}
       disabled={disabled}
+      id={id || name}
       maxLength={maxLength}
+      onChange={onChange}
+      onInput={onInput}
+      placeholder={placeholder || ''}
+      style={style}
+      type={type}
     />
   );
 
@@ -51,6 +57,8 @@ TextField.defaultProps = {
   disabled: false,
   id: null,
   maxLength: undefined,
+  onChange: undefined,
+  onInput: undefined,
   placeholder: null,
   style: {},
   type: 'text',
