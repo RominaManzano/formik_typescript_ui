@@ -15,6 +15,7 @@ export interface TextFieldProps {
   maxLength?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string | null;
   style?: object;
   type?: string;
@@ -31,6 +32,7 @@ const TextField: React.FC<TextFieldProps> = ({
   maxLength,
   onChange,
   onInput,
+  onKeyDown,
   placeholder,
   style,
   type,
@@ -44,6 +46,7 @@ const TextField: React.FC<TextFieldProps> = ({
       maxLength={maxLength}
       onChange={onChange || field.onChange}
       onInput={onInput}
+      onKeyDown={onKeyDown}
       placeholder={placeholder || ''}
       ref={forwardRef}
       style={style}
@@ -68,6 +71,7 @@ TextField.defaultProps = {
   maxLength: undefined,
   onChange: undefined,
   onInput: undefined,
+  onKeyDown: undefined,
   placeholder: null,
   style: {},
   type: 'text',
