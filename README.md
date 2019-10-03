@@ -253,6 +253,7 @@ maxLength   | number    | undefined     | Sets the `maxLenght` for the `<input>`
 onChange    | OnChange  | undefined     | Sets the `onChange` function for the `<input>` element. When `undefined`, it takes the formik field default `onChange` function.
 onInput     | OnInput   | undefined     | Sets the `onInput` function for the `<input>` element
 onKeyDown   | OnKeyDown | undefined     | Sets the `onKeyDown` function for the `<input>` element
+pattern     | string    | undefined     | Sets the `pattern` for the `<input>` element
 placeholder | string    | null          | Sets the placeholder for the `<input>` element
 style       | object    | {}            | Adds custom inline style to the `<input>` element
 type        | string    | 'text'        | HTML types: `text`, `email`, `password` and `number`
