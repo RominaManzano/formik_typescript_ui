@@ -12,7 +12,9 @@ export interface TextFieldProps {
   forwardRef?: RefType;
   id?: string | null;
   name: string;
+  max?: string | number;
   maxLength?: number;
+  min?: string | number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -30,7 +32,9 @@ const TextField: React.FC<TextFieldProps> = ({
   forwardRef,
   id,
   name,
+  max,
   maxLength,
+  min,
   onChange,
   onInput,
   onKeyDown,
@@ -45,7 +49,9 @@ const TextField: React.FC<TextFieldProps> = ({
       className={className || ''}
       disabled={disabled}
       id={id || name}
+      max={max}
       maxLength={maxLength}
+      min={min}
       onChange={onChange || field.onChange}
       onInput={onInput}
       onKeyDown={onKeyDown}
@@ -71,7 +77,9 @@ TextField.defaultProps = {
   disabled: false,
   forwardRef: undefined,
   id: null,
+  max: undefined,
   maxLength: undefined,
+  min: undefined,
   onChange: undefined,
   onInput: undefined,
   onKeyDown: undefined,
