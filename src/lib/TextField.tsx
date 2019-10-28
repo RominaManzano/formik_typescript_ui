@@ -15,6 +15,7 @@ export interface TextFieldProps {
   max?: string | number;
   maxLength?: number;
   min?: string | number;
+  minLength?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: React.FormEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -35,6 +36,7 @@ const TextField: React.FC<TextFieldProps> = ({
   max,
   maxLength,
   min,
+  minLength,
   onChange,
   onInput,
   onKeyDown,
@@ -52,6 +54,7 @@ const TextField: React.FC<TextFieldProps> = ({
       max={max}
       maxLength={maxLength}
       min={min}
+      minLength={minLength}
       onChange={onChange || field.onChange}
       onInput={onInput}
       onKeyDown={onKeyDown}
@@ -80,6 +83,7 @@ TextField.defaultProps = {
   max: undefined,
   maxLength: undefined,
   min: undefined,
+  minLength: undefined,
   onChange: undefined,
   onInput: undefined,
   onKeyDown: undefined,
