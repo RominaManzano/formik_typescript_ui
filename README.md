@@ -13,6 +13,21 @@ Formik TypeScript UI, contains simple HTML form fields wrapped with Formik and w
 npm install --save formik_typescript_ui
 ```
 
+## Change Log
+
+### [2.0.0] - 2019-12-12
+
+This release contains breaking changes from the previous version.
+
+#### Changed
+
+- `index.ts` components export
+
+#### Fixed
+
+- React scripts dependencies
+- Dependencies vulnerabilities
+
 ## Components
 
 ### CheckboxField
