@@ -22,6 +22,7 @@ This release contains breaking changes from the previous version.
 #### Changed
 
 - `index.ts` components export
+- `HandleChange` prop on `TagsInputField` was renamed to `HandleTagsChange`
 
 #### Fixed
 
