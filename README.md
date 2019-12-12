@@ -15,7 +15,7 @@ npm install --save formik_typescript_ui
 
 ## Change Log
 
-### [2.0.1] - 2019-12-12
+### [2.0.2] - 2019-12-12
 
 This release contains breaking changes from the previous version.
 
