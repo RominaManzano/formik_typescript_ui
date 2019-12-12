@@ -4,7 +4,7 @@ import { Field, FieldProps } from 'formik';
 
 import 'react-tagsinput/react-tagsinput.css';
 
-export type HandleChange = (tags: string[]) => void;
+export type HandleTagsChange = (tags: string[]) => void;
 export type PasteSplit = (text: string) => string[];
 
 export interface TagsInputProps {
@@ -33,7 +33,7 @@ const TagsInputField: React.FC<TagsInputProps> = ({
   tagProps,
 }: TagsInputProps) => {
   const renderTagsInput: React.ReactNode = ({ field, form }: FieldProps) => {
-    const handleChange: HandleChange = (tags: string[]) => {
+    const handleChange: HandleTagsChange = (tags: string[]) => {
       form.setFieldValue(name, tags);
     };
 
